@@ -1,0 +1,313 @@
+.mountain-list-container {
+  padding: var(--spacing-xl) var(--spacing-xl) var(--spacing-2xl);
+  max-width: 1400px;
+  margin: 0 auto;
+  min-height: 100vh;
+}
+
+.mountain-list-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-xl);
+  padding-bottom: var(--spacing-xl);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.header-text h1 {
+  color: var(--text-primary);
+  font-size: 2.5rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+}
+
+.header-icon {
+  font-size: 2rem;
+}
+
+.header-subtitle {
+  color: var(--text-tertiary);
+  font-size: 1rem;
+  margin-top: var(--spacing-xs);
+  font-weight: 400;
+}
+
+.create-button {
+  background: var(--gradient-primary);
+  color: white;
+  border: none;
+  padding: 0.875rem 1.75rem;
+  border-radius: var(--radius-lg);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-base);
+  box-shadow: var(--shadow-md), var(--shadow-glow-blue);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  white-space: nowrap;
+}
+
+.create-button:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-lg), 0 0 30px rgba(99, 102, 241, 0.4);
+}
+
+.create-button:active {
+  transform: translateY(-1px);
+}
+
+.btn-icon {
+  font-size: 1.25rem;
+  font-weight: 300;
+  line-height: 1;
+}
+
+/* Stats bar */
+.stats-bar {
+  display: flex;
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-xl);
+}
+
+.stat-chip {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  padding: 0.625rem 1.25rem;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-full);
+  font-size: 0.875rem;
+}
+
+.stat-value {
+  font-weight: 700;
+  color: var(--accent-blue);
+}
+
+.stat-label {
+  color: var(--text-tertiary);
+  font-weight: 500;
+}
+
+/* Grid */
+.mountains-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: var(--spacing-xl);
+}
+
+/* Card */
+.mountain-card {
+  position: relative;
+  background: var(--bg-secondary);
+  border-radius: var(--radius-xl);
+  padding: var(--spacing-xl);
+  cursor: pointer;
+  transition: all var(--transition-base);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+  overflow: hidden;
+  animation: cardIn 0.5s ease-out backwards;
+}
+
+@keyframes cardIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.card-glow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--gradient-primary);
+  opacity: 0;
+  transition: opacity var(--transition-base);
+}
+
+.mountain-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-xl), var(--shadow-glow-blue);
+  border-color: rgba(99, 102, 241, 0.3);
+}
+
+.mountain-card:hover .card-glow {
+  opacity: 1;
+}
+
+.mountain-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.mountain-card-header h2 {
+  color: var(--text-primary);
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  flex: 1;
+}
+
+.default-badge {
+  background: var(--gradient-primary);
+  color: white;
+  padding: 0.2rem 0.7rem;
+  border-radius: var(--radius-full);
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.mountain-description {
+  color: var(--text-tertiary);
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.mountain-stats {
+  display: flex;
+  gap: var(--spacing-lg);
+  flex-wrap: wrap;
+}
+
+.stat-item {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.stat-icon {
+  font-size: 1rem;
+}
+
+.mountain-card-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+  padding-top: var(--spacing-md);
+  border-top: 1px solid var(--border-color);
+}
+
+.open-button {
+  background: transparent;
+  color: var(--accent-blue);
+  border: 1px solid var(--accent-blue);
+  padding: 0.5rem 1.25rem;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  font-size: 0.875rem;
+  font-weight: 600;
+  transition: all var(--transition-base);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.open-button:hover {
+  background: var(--accent-blue);
+  color: white;
+  box-shadow: var(--shadow-glow-blue);
+}
+
+.arrow-icon {
+  transition: transform var(--transition-base);
+}
+
+.open-button:hover .arrow-icon {
+  transform: translateX(3px);
+}
+
+.delete-button {
+  background: transparent;
+  color: var(--text-tertiary);
+  border: 1px solid transparent;
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  font-size: 0.8rem;
+  font-weight: 500;
+  transition: all var(--transition-base);
+}
+
+.delete-button:hover {
+  background: rgba(244, 63, 94, 0.1);
+  color: var(--accent-red);
+  border-color: rgba(244, 63, 94, 0.3);
+}
+
+/* Empty state */
+.no-mountains {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: var(--spacing-2xl) var(--spacing-xl);
+  color: var(--text-tertiary);
+  background: var(--bg-secondary);
+  border-radius: var(--radius-xl);
+  border: 2px dashed var(--border-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-md);
+}
+
+.empty-icon {
+  font-size: 4rem;
+  opacity: 0.5;
+}
+
+.no-mountains h2 {
+  color: var(--text-primary);
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.no-mountains p {
+  font-size: 1rem;
+  max-width: 400px;
+}
+
+@media (max-width: 768px) {
+  .mountain-list-container {
+    padding: var(--spacing-md);
+  }
+
+  .mountain-list-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--spacing-md);
+  }
+
+  .header-text h1 {
+    font-size: 1.75rem;
+  }
+
+  .mountains-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .stats-bar {
+    flex-wrap: wrap;
+  }
+}
