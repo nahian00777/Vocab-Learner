@@ -165,6 +165,3 @@ Vocab Learner/
 - Word statuses are stored per mountain, allowing different progress for different vocab mountains.
 - The color scheme uses a modern gradient design with purple/blue tones, different from the original GregMat design.
 
-## License
-
-ISC
